@@ -1,0 +1,187 @@
+<div wm-diver>
+    <div class="slide fade">
+        <div class="numbertext">1/ 4</div>
+        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" >
+        <div class="text" style="color: purple;">Muro da Cidade Monte Tarso</div>
+    </div>
+    <div class="slide fade">
+        <div class="numbertext">2/ 4</div>
+        <img src="http://files.cod3r.com.br/curso-web/imagem2.gif">
+        <div class="text">Intro Cod3r</div>
+    </div>
+    <div class="slide fade">
+        <div class="numbertext">3/ 4</div>
+        <img src="http://files.cod3r.com.br/curso-web/imagem3.png">
+        <div class="text">Rio de Janeiro</div>
+    </div>
+    <div class="slide fade">
+        <div class="numbertext">4/ 4</div>
+        <img src="http://files.cod3r.com.br/curso-web/imagem4.jpg">
+        <div class="text">Cidade</div>
+    </div>
+    <!-- <a class="prev" onclick="plusSlider(-1)">&#10094;</a>
+    <a class="next  " onclick="plusSlider(1)">&#10094;</a> -->
+    <br> <br> <br> <br> <br> <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+
+    </div>
+
+<!-- <p class="texto">
+    <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" 
+        alt="Avatar" height="50" align="left"> 
+        Texto kdfsklafj fldska jfdlk fjdasklfj dklajfdlka ak
+         aldsfjdskla kdfsklafj fadskjfdskal sf kf adsjf dasklsa
+          kfdsjksad fkdjsakfadsf dsadjaskd kasdjdk akds dkasdksa
+           fldsdksajdk
+</p>
+
+
+
+<p>
+    <picture>
+        <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png"
+            media="(min-width: 600px">
+            <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="Logo"> 
+    </picture>
+</p>
+ -->
+</div>
+<style>
+
+    * {box-sizing:border-box;}
+
+    img { 
+        vertical-align: middle;
+        width: 1400;
+        height: auto;        
+    }
+    .wm-diver {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+    }
+    .slide {
+        display: none;
+    }
+/* 
+    .next, .prev {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover, .next:hover {
+        background-color: rgb(0, 0, 0, 0.8);
+    } */
+    
+    .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6 ease;
+    }
+
+    .active, .dot:hover {
+        background-color: #717171;
+    }
+
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+        from {opacity: .4;}
+        to {opacity: 1;}
+    }
+
+    @keyframes fade {
+        from {opacity: .4;}
+        to {opacity: 1;}
+    }
+
+    .circular {
+        width: 513px;
+        background-color: #fff;
+    }
+
+    .text {
+        width: 400px;
+    }
+
+    .text img {
+        margin-right: 12px;
+    }
+
+    /* .cidade {
+        width: 513px;
+        height: 342px;
+        background-image: url('http://files.cod3r.com.br/curso-web/imagem4.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 200%;
+    } */
+</style>
+<script>
+    var slideIndex = 0
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("slide");
+        var dots = document.getElementsByClassName("dot")
+        for (i = 0; i< slides.length; i++) {
+            slides[i].style.display = "none"
+        }
+        slideIndex++
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        if (slideIndex > slides.length) {slideIndex = 1}
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 2000);
+    }
+</script>
